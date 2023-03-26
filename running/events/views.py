@@ -1,7 +1,10 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
+from rest_framework.filters import SearchFilter
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.response import Response
 
+from .filters import EventFilter
 from .models import Event
 from .serializers import EventDetailSerializer, EventListSerializer
 
@@ -9,6 +12,8 @@ from .serializers import EventDetailSerializer, EventListSerializer
 class EventList(generics.ListCreateAPIView):
     queryset = Event.objects.all()
     serializer_class = EventListSerializer
+    filter_backends = [SearchFilter, DjangoFilterBackend]
+    filterset_class = EventFilter
 
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
