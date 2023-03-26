@@ -6,12 +6,6 @@
       }
     },
     "python.formatting.provider": "black",
-    "conventionalCommits.scopes": [
-      "poetry",
-      "vscode",
-      "finder",
-      "authentication"
-    ],
     "editor.tabSize": 4,
     "python.linting.enabled": true,
     "python.testing.unittestArgs": [

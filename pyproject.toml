@@ -16,6 +16,7 @@ Django = "^4.1.7"
 python-dotenv = "^1.0.0"
 psycopg2-binary = "^2.9.5"
 django-cors-headers = "^3.14.0"
+pillow = "^9.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -62,6 +63,6 @@ build-backend = "poetry.core.masonry.api"
         "PL",
     ]
 
-    ignore = ["DJ001", "S107", "S106", "E501"] 
+    ignore = ["DJ001", "S107", "S106", "E501", "DJ008"] 
     target-version = "py311" # Python Version
 
