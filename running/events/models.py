@@ -13,6 +13,9 @@ class Event(models.Model):
     certificate = models.FileField(upload_to="certificates/")
     photos = models.ManyToManyField("Photo", blank=True)
 
+    class Meta:
+        ordering = ["-date"]
+
 
 class Photo(models.Model):
     image = models.ImageField(upload_to="event_photos/")
