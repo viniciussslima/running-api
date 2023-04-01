@@ -64,6 +64,6 @@ build-backend = "poetry.core.masonry.api"
         "PL",
     ]
 
-    ignore = ["DJ001", "S107", "S106", "E501", "DJ008"] 
+    ignore = ["DJ001", "S107", "S106", "E501"] 
     target-version = "py311" # Python Version
 

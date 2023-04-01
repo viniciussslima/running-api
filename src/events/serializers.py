@@ -1,14 +1,14 @@
 from rest_framework import serializers
 
-from .models import Event, Photo
+from .models import Asset, Event
 
 
-class PhotoSerializer(serializers.ModelSerializer):
+class AssetSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Photo
+        model = Asset
         fields = [
             "id",
-            "image",
+            "url",
         ]
 
 
@@ -28,8 +28,9 @@ class EventListSerializer(serializers.ModelSerializer):
         ]
 
 
-class EventDetailSerializer(serializers.ModelSerializer):
-    photos = PhotoSerializer(many=True, read_only=True)
+class EventSerializer(serializers.ModelSerializer):
+    certificate = AssetSerializer(read_only=True)
+    photos = AssetSerializer(many=True, read_only=True)
 
     class Meta:
         model = Event
