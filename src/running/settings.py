@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "events",
     "rest_framework",
     "django_filters",
-    "storages"
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -124,7 +124,7 @@ REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
-#S3 CONF
+# S3 CONF
 AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")

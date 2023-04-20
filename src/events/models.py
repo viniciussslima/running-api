@@ -15,6 +15,7 @@ class Event(models.Model):
         related_name="certificate",
         on_delete=models.PROTECT,
         null=True,
+        blank=True,
     )
     photos = models.ManyToManyField("Asset", related_name="photos", blank=True)
 
