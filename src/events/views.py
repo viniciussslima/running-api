@@ -4,6 +4,8 @@ from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
 from rest_framework.response import Response
 
+from authentication.permissions import OnlyGetPublic
+
 from .models import Event
 from .serializers import EventListSerializer, EventSerializer
 
@@ -17,6 +19,8 @@ class EventViewSet(viewsets.ModelViewSet):
         "date": ["year"],
         "distance": ["exact"],
     }
+    permission_classes = [OnlyGetPublic]
+
 
     def get_serializer_class(self):
         if self.action == "list":
